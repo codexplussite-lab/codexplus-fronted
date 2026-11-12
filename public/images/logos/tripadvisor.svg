@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="taGlow" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#34E0A1" stop-opacity="0.24" />
+      <stop offset="55%" stop-color="#6D28D9" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0D061A" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="taBg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#190C30" />
+      <stop offset="55%" stop-color="#120822" />
+      <stop offset="100%" stop-color="#0B0516" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#taBg)" />
+  <rect width="512" height="512" fill="url(#taGlow)" />
+  <rect x="18" y="18" width="476" height="476" rx="28" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2" />
+  <circle cx="256" cy="204" r="76" fill="#34E0A1" />
+  <g transform="translate(194, 142) scale(4.42)">
+    <path d="M5 10.5C8.5 8.5 19.5 8.5 23 10.5" stroke="#0A0A0A" stroke-width="1.9" stroke-linecap="round" />
+    <circle cx="9.5" cy="15" r="4" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.8" />
+    <circle cx="18.5" cy="15" r="4" fill="#FFFFFF" stroke="#0A0A0A" stroke-width="1.8" />
+    <circle cx="9.5" cy="15" r="1.5" fill="#0A0A0A" />
+    <circle cx="18.5" cy="15" r="1.5" fill="#0A0A0A" />
+    <path d="M12.5 18L14 20.5L15.5 18H12.5Z" fill="#0A0A0A" />
+  </g>
+  <text x="256" y="346" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="44" font-weight="700" letter-spacing="-0.02em">Tripadvisor</text>
+  <text x="256" y="390" text-anchor="middle" fill="#A78BFA" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" letter-spacing="0.14em">GLOBAL HOSPITALITY</text>
+</svg>
+

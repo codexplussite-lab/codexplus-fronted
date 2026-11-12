@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" fill="none">
+  <defs>
+    <radialGradient id="t4glow" cx="50%" cy="28%" r="65%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.45"/>
+      <stop offset="55%" stop-color="#2e1065" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0a0612" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="t4rim" x1="150" y1="120" x2="450" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9d5ff" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4c1d95" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="#0d0718"/>
+  <rect width="600" height="800" fill="url(#t4glow)"/>
+  <circle cx="300" cy="240" r="180" stroke="#a855f7" stroke-opacity="0.18" stroke-width="1.5"/>
+  <circle cx="300" cy="240" r="240" stroke="#c084fc" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="300" cy="275" r="84" fill="#170c2b" stroke="url(#t4rim)" stroke-width="2.5"/>
+  <path d="M135 660C135 510 205 425 300 425C395 425 465 510 465 660" fill="#140a25" stroke="url(#t4rim)" stroke-width="2.5"/>
+  <text x="300" y="295" text-anchor="middle" fill="#e9d5ff" font-family="system-ui, sans-serif" font-size="44" font-weight="600" letter-spacing="4">AR</text>
+</svg>
+

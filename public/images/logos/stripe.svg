@@ -1,0 +1,22 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="stGlow" cx="50%" cy="42%" r="55%">
+      <stop offset="0%" stop-color="#635BFF" stop-opacity="0.30" />
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#0D061A" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="stBg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#190C30" />
+      <stop offset="55%" stop-color="#120822" />
+      <stop offset="100%" stop-color="#0B0516" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#stBg)" />
+  <rect width="512" height="512" fill="url(#stGlow)" />
+  <rect x="18" y="18" width="476" height="476" rx="28" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2" />
+  <rect x="186" y="128" width="140" height="140" rx="34" fill="#635BFF" />
+  <path d="M250.2 182.8C250.2 177.8 254.4 175.8 261.2 175.8C271 175.8 283.4 178.8 293.2 184V157.8C282.4 153.6 271.8 152 261.2 152C235 152 217.6 165.6 217.6 186.6C217.6 219.4 262.8 214.2 262.8 228.4C262.8 234.4 257.6 236.4 250.2 236.4C239.2 236.4 225.2 232 214.2 226V252.6C226.4 257.8 238.8 260 250.2 260C277 260 295.4 246.8 295.4 225.4C295.2 190 250.2 196.4 250.2 182.8Z" fill="#FFFFFF" />
+  <text x="256" y="346" text-anchor="middle" fill="#FFFFFF" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="46" font-weight="700" letter-spacing="-0.02em">Stripe</text>
+  <text x="256" y="390" text-anchor="middle" fill="#A78BFA" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" letter-spacing="0.14em">GLOBAL PAYMENTS</text>
+</svg>
+
