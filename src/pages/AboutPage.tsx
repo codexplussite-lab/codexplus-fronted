@@ -270,3 +270,4 @@ export function AboutPage({ onOpenModal, onNavigateContact, onNavigateHome }: Ab
     </div>
   );
 }
+

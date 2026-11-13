@@ -412,3 +412,4 @@ export function ContactPage({ onOpenModal, onNavigateHome }: ContactPageProps) {
     </div>
   );
 }
+
