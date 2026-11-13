@@ -101,7 +101,7 @@ export function ClientFeedbackSection() {
     <section
       id="clients"
       aria-label="Client Feedback"
-      className="relative w-full overflow-hidden bg-[#0E0B12] px-6 py-14 md:px-12 lg:py-16"
+      className="relative w-full overflow-hidden bg-[#0E0B12] px-6 py-20 md:px-12 lg:py-24"
     >
       {/* Subtle ambient violet glow */}
       <div
@@ -111,17 +111,17 @@ export function ClientFeedbackSection() {
 
       <div className="relative mx-auto max-w-[1600px]">
         {/* Editorial Section Header */}
-        <div className="mb-8 flex flex-col gap-3 md:mb-10 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-3 py-0.5 text-[10px] font-semibold tracking-[0.18em] text-violet-300 uppercase">
+            <span className="inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/10 px-3.5 py-1 text-[11px] font-semibold tracking-[0.18em] text-violet-300 uppercase">
               Client Stories
             </span>
-            <h2 className="mt-2.5 text-2xl font-bold tracking-tight text-white/95 md:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-white/95 md:text-5xl">
               Client Feedback
             </h2>
           </div>
 
-          <div className="flex items-center gap-2.5 text-xs text-gray-400 sm:text-sm">
+          <div className="flex items-center gap-3 text-sm text-gray-400">
             <span className="text-[#FACC15]" aria-hidden="true">
               ★★★★★
             </span>
@@ -165,12 +165,12 @@ export function ClientFeedbackSection() {
               />
 
               {/* Top & Bottom Vignettes */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#09060e]/85 via-[#09060e]/35 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[#09060e]/85 via-[#09060e]/35 to-transparent" />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#09060e]/95 via-[#09060e]/45 to-transparent" />
 
               {/* Collapsed Slice Index */}
               <span
-                className={`pointer-events-none absolute inset-x-0 bottom-4 text-center font-mono text-[10px] font-medium tracking-widest text-white/55 transition-opacity duration-200 ${
+                className={`pointer-events-none absolute inset-x-0 bottom-5 text-center font-mono text-[11px] font-medium tracking-widest text-white/55 transition-opacity duration-200 ${
                   isActive ? 'opacity-0' : 'opacity-100'
                 }`}
                 aria-hidden="true"
@@ -180,31 +180,31 @@ export function ClientFeedbackSection() {
 
               {/* Top Overlay (Centered) */}
               <div
-                className={`pointer-events-none absolute inset-x-0 top-0 z-10 px-4 pt-4 text-center transition-all duration-300 md:pt-5 ${
+                className={`pointer-events-none absolute inset-x-0 top-0 z-10 px-5 pt-6 text-center transition-all duration-300 ${
                   isActive ? 'translate-y-0 opacity-100' : '-translate-y-2 opacity-0'
                 }`}
               >
-                <h3 className="text-sm font-semibold tracking-tight text-white md:text-base">
+                <h3 className="text-base font-semibold tracking-tight text-white md:text-xl">
                   {item.name}
                 </h3>
-                <p className="mt-0.5 text-[11px] font-medium text-gray-300/85 md:text-xs">
+                <p className="mt-1 text-xs font-medium text-gray-300/85 md:text-sm">
                   {item.role} <span className="text-violet-300/80">&middot; {item.company}</span>
                 </p>
               </div>
 
               {/* Bottom Overlay (Centered) */}
               <div
-                className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 px-4 pb-4 text-center transition-all duration-300 md:pb-5 ${
+                className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 px-5 pb-7 text-center transition-all duration-300 ${
                   isActive ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
                 }`}
               >
                 <div
-                  className="mb-1.5 text-xs tracking-[0.2em] text-[#FACC15] drop-shadow-[0_2px_8px_rgba(250,204,21,0.35)]"
+                  className="mb-2.5 text-sm tracking-[0.22em] text-[#FACC15] drop-shadow-[0_2px_10px_rgba(250,204,21,0.35)]"
                   aria-label={`${item.rating} out of 5 stars`}
                 >
                   {'★'.repeat(item.rating)}
                 </div>
-                <p className="mx-auto max-w-[90%] text-[11px] leading-relaxed text-white/95 md:text-xs">
+                <p className="mx-auto max-w-[85%] text-xs leading-relaxed text-white/95 md:text-[15px]">
                   {item.quote}
                 </p>
               </div>

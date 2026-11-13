@@ -57,6 +57,22 @@ const teamMembers: TeamMember[] = [
       'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
     alt: 'Portrait of Liam Chen, Systems Security Lead',
   },
+  {
+    id: 'maya-patel',
+    name: 'Maya Patel',
+    role: 'Head of Brand Strategy',
+    image:
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Maya Patel, Head of Brand Strategy',
+  },
+  {
+    id: 'kai-takahashi',
+    name: 'Kai Takahashi',
+    role: 'Lead Cloud Architect',
+    image:
+      'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Kai Takahashi, Lead Cloud Architect',
+  },
 ];
 
 const carouselItems: DepthCarouselItemObject[] = teamMembers.map((member) => ({
@@ -98,7 +114,8 @@ export function OurTeamSection() {
             tilt={14}
             tiltDirection="right"
             perspective={2400}
-            visibleCards={4}
+            activeCount={3}
+            visibleCards={5}
             falloff={0.11}
             blur={5}
             duration={450}
