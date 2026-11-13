@@ -51,7 +51,7 @@ export function TrustedClients() {
           gap={12}
           squeeze={0.2}
           focusOnClick
-          captions
+          captions={false}
           fit="square"
           radius={3}
           lensWidth={1.97}
