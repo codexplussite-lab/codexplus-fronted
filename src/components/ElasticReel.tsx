@@ -8,6 +8,8 @@ export interface ElasticReelProps<T> {
   activeIndex?: number;
   onActiveIndexChange?: (index: number) => void;
   defaultActiveIndex?: number;
+  activeFlex?: number;
+  collapsedFlex?: number;
   className?: string;
 }
 
@@ -22,6 +24,8 @@ export function ElasticReel<T>({
   activeIndex: controlledIndex,
   onActiveIndexChange,
   defaultActiveIndex = 0,
+  activeFlex = 2.6,
+  collapsedFlex = 0.85,
   className = '',
 }: ElasticReelProps<T>) {
   const [internalIndex, setInternalIndex] = useState(defaultActiveIndex);
@@ -53,7 +57,7 @@ export function ElasticReel<T>({
             onClick={() => selectIndex(index)}
             initial={false}
             animate={{
-              flexGrow: isActive ? 5.2 : 0.68,
+              flexGrow: isActive ? activeFlex : collapsedFlex,
             }}
             transition={{
               type: 'spring',
