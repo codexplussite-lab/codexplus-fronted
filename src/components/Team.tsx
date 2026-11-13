@@ -121,6 +121,22 @@ const teamMembers: TeamMember[] = [
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80',
     alt: 'Portrait of Seraphina Zheng, Lead Autonomous Systems Engineer',
   },
+  {
+    id: 'hassan-tariq',
+    name: 'Hassan Tariq',
+    role: 'VP of Machine Learning Infrastructure',
+    image:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Hassan Tariq, VP of Machine Learning Infrastructure',
+  },
+  {
+    id: 'isabella-rossi',
+    name: 'Isabella Rossi',
+    role: 'Chief Brand & Experience Strategist',
+    image:
+      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Isabella Rossi, Chief Brand & Experience Strategist',
+  },
 ];
 
 const carouselItems: DepthCarouselItemObject[] = teamMembers.map((member) => ({
@@ -157,14 +173,14 @@ export function OurTeamSection() {
             cardHeight={400}
             radius={20}
             tint="#0E0B12"
-            depth={90}
-            spread={115}
+            depth={95}
+            spread={105}
             tilt={14}
             tiltDirection="right"
             perspective={2400}
-            activeCount={6}
+            activeCount={7}
             centerOffset={0}
-            visibleCards={7}
+            visibleCards={8}
             falloff={0.11}
             blur={5}
             duration={450}
