@@ -35,6 +35,7 @@ export interface DepthCarouselProps {
   perspective?: number;
   visibleCards?: number;
   activeCount?: number;
+  centerOffset?: number;
   falloff?: number;
   blur?: number;
   duration?: number;
@@ -56,6 +57,7 @@ interface CarouselConfig {
   tiltDirection: TiltDirection;
   visibleCards: number;
   activeCount: number;
+  centerOffset?: number;
   falloff: number;
   blur: number;
   duration: number;
@@ -101,6 +103,7 @@ const DepthCarousel = ({
   perspective = 1400,
   visibleCards = 4,
   activeCount = 1,
+  centerOffset = 0,
   falloff = 0.2,
   blur = 6,
   duration = 700,
@@ -133,6 +136,7 @@ const DepthCarousel = ({
     tiltDirection,
     visibleCards,
     activeCount,
+    centerOffset,
     falloff,
     blur,
     duration,
@@ -160,6 +164,7 @@ const DepthCarousel = ({
       tiltDirection,
       visibleCards,
       activeCount,
+      centerOffset,
       falloff,
       blur,
       duration,
@@ -195,7 +200,7 @@ const DepthCarousel = ({
       const shown = az <= cfg.visibleCards + 0.6;
 
       const tz = -cfg.depth * d;
-      const tx = centerShift + dir * cfg.spread * d;
+      const tx = centerShift + (cfg.centerOffset || 0) + dir * cfg.spread * d;
       const ry = dir * cfg.tilt * clamp(d - (activeSpan - 1), 0, 1);
 
       let opacity = d < 0 ? Math.max(0, 1 + d) : 1;
@@ -428,7 +433,7 @@ const DepthCarousel = ({
 
   useEffect(() => {
     layout(posRef.current);
-  }, [layout, depth, spread, tilt, tiltDirection, visibleCards, activeCount, falloff, blur, cardWidth, cardHeight, radius, count]);
+  }, [layout, depth, spread, tilt, tiltDirection, visibleCards, activeCount, centerOffset, falloff, blur, cardWidth, cardHeight, radius, count]);
 
   useEffect(
     () => () => {

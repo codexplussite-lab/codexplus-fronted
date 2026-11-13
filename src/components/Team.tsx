@@ -114,7 +114,8 @@ export function OurTeamSection() {
             tilt={14}
             tiltDirection="right"
             perspective={2400}
-            activeCount={3}
+            activeCount={1}
+            centerOffset={110}
             visibleCards={5}
             falloff={0.11}
             blur={5}
