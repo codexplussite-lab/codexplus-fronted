@@ -42,7 +42,7 @@ export function Services({ onOpenModal }: ServicesProps) {
 
         {/* Bento Grid: 1 large vertical card on the left + 4 cards in 2x2 on the right */}
         <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3 lg:grid-rows-2">
-          {SERVICES.map((service) => {
+          {SERVICES.map((service, idx) => {
             const isActive = activeId === service.id;
             const isLarge = Boolean(service.isLarge);
 
@@ -51,11 +51,11 @@ export function Services({ onOpenModal }: ServicesProps) {
                 key={service.id}
                 onMouseEnter={() => setActiveId(service.id)}
                 onClick={() => setActiveId(service.id)}
-                className={`group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border p-8 transition-all duration-300 ${
+                className={`specular-card group relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border p-8 transition-all duration-300 ${
                   isLarge ? 'min-h-[340px] lg:row-span-2 lg:min-h-[460px]' : 'min-h-[220px]'
                 } ${
                   isActive
-                    ? 'border-violet-400/70 bg-gradient-to-br from-[#1f1037] via-[#140a24] to-[#0d0618] shadow-[0_0_45px_rgba(139,92,246,0.28)]'
+                    ? 'border-violet-400/80 bg-gradient-to-br from-[#1f1037] via-[#140a24] to-[#0d0618] shadow-[0_12px_45px_rgba(139,92,246,0.3)]'
                     : 'border-white/10 bg-[#10081c]/90 hover:border-violet-400/40 hover:bg-[#150b26]'
                 }`}
               >
@@ -68,17 +68,22 @@ export function Services({ onOpenModal }: ServicesProps) {
                   }`}
                 />
 
-                {/* Top row: Tag + Circular Arrow */}
+                {/* Top row: Number/Tag + Circular Arrow */}
                 <div className="relative z-10 flex items-start justify-between gap-4">
-                  <span
-                    className={`rounded-full border px-3.5 py-1 text-xs font-medium tracking-wide transition-colors ${
-                      isActive
-                        ? 'border-violet-400/40 bg-violet-500/20 text-violet-200'
-                        : 'border-white/10 bg-white/[0.04] text-gray-400'
-                    }`}
-                  >
-                    {service.tag}
-                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-xs font-semibold tracking-wider text-violet-400">
+                      {String(idx + 1).padStart(2, '0')}
+                    </span>
+                    <span
+                      className={`rounded-full border px-3.5 py-1 text-xs font-medium tracking-wide transition-colors ${
+                        isActive
+                          ? 'border-violet-400/40 bg-violet-500/20 text-violet-200 shadow-[0_0_12px_rgba(168,85,247,0.3)]'
+                          : 'border-white/10 bg-white/[0.04] text-gray-400'
+                      }`}
+                    >
+                      {service.tag}
+                    </span>
+                  </div>
 
                   <span
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${

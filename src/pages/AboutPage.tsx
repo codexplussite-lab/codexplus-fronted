@@ -208,7 +208,9 @@ export function AboutPage({ onOpenModal, onNavigateContact, onNavigateHome }: Ab
               >
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="font-display text-2xl font-bold text-white">{item.year}</span>
+                  <span className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+                    {item.year}
+                  </span>
                     <span className="rounded-full border border-violet-400/30 bg-violet-500/10 px-2.5 py-0.5 text-[11px] font-medium text-violet-300 uppercase">
                       {item.badge}
                     </span>
@@ -227,13 +229,53 @@ export function AboutPage({ onOpenModal, onNavigateContact, onNavigateHome }: Ab
         <div className="mt-20 grid grid-cols-2 gap-6 border-y border-white/10 py-12 lg:grid-cols-4">
           {STATS.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center text-center">
-              <span className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <span className="text-gradient-luxury font-display text-3xl font-extrabold tracking-tight drop-shadow-[0_4px_20px_rgba(139,92,246,0.3)] sm:text-5xl">
                 {stat.value}
               </span>
               <span className="mt-2 text-sm font-semibold text-violet-300">{stat.label}</span>
               <span className="mt-0.5 text-xs text-gray-400">{stat.sub}</span>
             </div>
           ))}
+        </div>
+
+        {/* Technology & Standards Badges */}
+        <div className="mt-20 rounded-3xl border border-white/10 bg-[#10071e]/70 p-8 sm:p-10 backdrop-blur-xl">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="text-xs font-semibold tracking-[0.22em] text-violet-300 uppercase">
+                Enterprise Standards
+              </span>
+              <h3 className="mt-2 font-display text-2xl font-bold text-white">
+                Engineered with Modern Flagship Tech
+              </h3>
+            </div>
+            <p className="max-w-md text-xs leading-relaxed text-gray-400 sm:text-sm">
+              We reject brittle low-code shortcuts in favor of clean modular architecture, typed safety,
+              and low-latency edge deployment.
+            </p>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2.5">
+            {[
+              'React 19 & Next.js',
+              'TypeScript Strict Mode',
+              'Tailwind CSS v4',
+              'WebGL & Shaders (OGL)',
+              'GSAP Animation Core',
+              'PyTorch & LangChain',
+              'Distributed Cloudflare Edge',
+              'SOC2 / ISO Security Posture',
+              'Sub-second First Contentful Paint',
+            ].map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 text-xs font-medium text-gray-300 transition-colors hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white"
+              >
+                <span className="h-1.5 w-1.5 rounded-full bg-violet-400 shadow-[0_0_6px_#a78bfa]" />
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA Block */}

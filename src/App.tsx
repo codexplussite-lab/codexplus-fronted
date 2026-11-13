@@ -75,7 +75,7 @@ export function App() {
       <main>
         {currentPage === 'home' && (
           <>
-            <Hero />
+            <Hero onOpenModal={() => setModalOpen(true)} />
             <About />
             <Services onOpenModal={() => setModalOpen(true)} />
             <TrustedClients />

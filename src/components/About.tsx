@@ -32,7 +32,7 @@ export function About() {
 
             <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-8">
               <div>
-                <div className="font-display text-2xl font-bold text-white sm:text-3xl">
+                <div className="text-gradient-luxury font-display text-2xl font-bold sm:text-3xl">
                   120+
                 </div>
                 <div className="mt-1 text-xs tracking-wide text-gray-400 uppercase">
@@ -40,7 +40,7 @@ export function About() {
                 </div>
               </div>
               <div>
-                <div className="font-display text-2xl font-bold text-violet-300 sm:text-3xl">
+                <div className="text-gradient-violet font-display text-2xl font-bold sm:text-3xl">
                   98%
                 </div>
                 <div className="mt-1 text-xs tracking-wide text-gray-400 uppercase">
@@ -48,7 +48,7 @@ export function About() {
                 </div>
               </div>
               <div>
-                <div className="font-display text-2xl font-bold text-white sm:text-3xl">
+                <div className="text-gradient-luxury font-display text-2xl font-bold sm:text-3xl">
                   24/7
                 </div>
                 <div className="mt-1 text-xs tracking-wide text-gray-400 uppercase">

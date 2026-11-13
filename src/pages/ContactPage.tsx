@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Sparkles, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ChevronDown, Sparkles, Clock, ShieldCheck, Copy, Check } from 'lucide-react';
 
 interface ContactPageProps {
   onOpenModal: () => void;
@@ -75,7 +75,14 @@ export function ContactPage({ onOpenModal, onNavigateHome }: ContactPageProps) {
   const [company, setCompany] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('Info@codexplus.site');
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -121,7 +128,7 @@ export function ContactPage({ onOpenModal, onNavigateHome }: ContactPageProps) {
         <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Left Column: Interactive Form */}
           <div className="lg:col-span-7">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#140a25]/90 via-[#10071e]/90 to-[#0b0515]/95 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.55)] sm:p-12">
+            <div className="specular-card relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#140a25]/90 via-[#10071e]/90 to-[#0b0515]/95 p-8 shadow-[0_24px_80px_rgba(0,0,0,0.55)] sm:p-12">
               {submitted ? (
                 <div className="py-16 text-center">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-violet-400/40 bg-violet-500/20 text-violet-300">
@@ -301,13 +308,33 @@ export function ContactPage({ onOpenModal, onNavigateHome }: ContactPageProps) {
               <div className="mt-6 space-y-5 border-t border-white/10 pt-6">
                 <div>
                   <span className="text-xs text-gray-400 uppercase">General Inquiries</span>
-                  <a
-                    href="mailto:Info@codexplus.site"
-                    className="mt-1 flex items-center gap-2 font-display text-base font-semibold text-white transition-colors hover:text-violet-300 sm:text-lg"
-                  >
-                    <Mail className="h-4 w-4 text-violet-400" />
-                    Info@codexplus.site
-                  </a>
+                  <div className="mt-1 flex items-center justify-between gap-3">
+                    <a
+                      href="mailto:Info@codexplus.site"
+                      className="flex items-center gap-2 font-display text-base font-semibold text-white transition-colors hover:text-violet-300 sm:text-lg"
+                    >
+                      <Mail className="h-4 w-4 text-violet-400" />
+                      Info@codexplus.site
+                    </a>
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      aria-label="Copy email address"
+                      className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-gray-300 transition-colors hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white"
+                    >
+                      {copied ? (
+                        <>
+                          <Check className="h-3.5 w-3.5 text-emerald-400" />
+                          <span className="text-emerald-400">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="h-3.5 w-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
                 <div>
