@@ -73,6 +73,38 @@ const teamMembers: TeamMember[] = [
       'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=80',
     alt: 'Portrait of Kai Takahashi, Lead Cloud Architect',
   },
+  {
+    id: 'david-keller',
+    name: 'David Keller',
+    role: 'Principal AI Systems Engineer',
+    image:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of David Keller, Principal AI Systems Engineer',
+  },
+  {
+    id: 'amara-okafor',
+    name: 'Amara Okafor',
+    role: 'Head of Product Strategy',
+    image:
+      'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Amara Okafor, Head of Product Strategy',
+  },
+  {
+    id: 'lucas-silva',
+    name: 'Lucas Silva',
+    role: 'Senior WebGL & 3D Engineer',
+    image:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Lucas Silva, Senior WebGL & 3D Engineer',
+  },
+  {
+    id: 'chloe-dupont',
+    name: 'Chloe Dupont',
+    role: 'VP of Brand & Visual Design',
+    image:
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80',
+    alt: 'Portrait of Chloe Dupont, VP of Brand & Visual Design',
+  },
 ];
 
 const carouselItems: DepthCarouselItemObject[] = teamMembers.map((member) => ({
@@ -110,13 +142,13 @@ export function OurTeamSection() {
             radius={20}
             tint="#0E0B12"
             depth={80}
-            spread={175}
+            spread={160}
             tilt={14}
             tiltDirection="right"
             perspective={2400}
-            activeCount={1}
-            centerOffset={110}
-            visibleCards={5}
+            activeCount={5}
+            centerOffset={0}
+            visibleCards={6}
             falloff={0.11}
             blur={5}
             duration={450}
