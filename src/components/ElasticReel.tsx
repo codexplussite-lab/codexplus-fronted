@@ -36,7 +36,7 @@ export function ElasticReel<T>({
 
   return (
     <div
-      className={`flex h-[440px] w-full items-stretch gap-2 overflow-hidden sm:h-[500px] sm:gap-3 lg:h-[560px] lg:gap-4 ${className}`.trim()}
+      className={`flex h-[320px] w-full items-stretch gap-2 overflow-hidden sm:h-[360px] sm:gap-2.5 lg:h-[410px] lg:gap-3 ${className}`.trim()}
       role="list"
     >
       {items.map((item, index) => {
@@ -53,11 +53,11 @@ export function ElasticReel<T>({
             onClick={() => selectIndex(index)}
             initial={false}
             animate={{
-              flexGrow: isActive ? 5.2 : 0.68,
+              flexGrow: isActive ? 3.4 : 0.8,
             }}
             transition={{
               type: 'spring',
-              stiffness: 250,
+              stiffness: 260,
               damping: 26,
               mass: 0.9,
             }}
