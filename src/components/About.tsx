@@ -7,9 +7,8 @@ export function About() {
         {/* Top Statement */}
         <div className="max-w-5xl">
           <p className="font-display text-2xl leading-[1.35] font-medium tracking-tight text-white sm:text-4xl lg:text-[42px]">
-            — We&apos;re your dedicated partner in finding the residence of your
-            dreams. We&apos;re committed to connecting you with future-ready
-            homes that match your lifestyle.
+            — We architect next-generation digital products, high-throughput AI pipelines,
+            and bespoke luxury interfaces for industry leaders redefining the modern web.
           </p>
         </div>
 

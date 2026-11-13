@@ -1,21 +1,16 @@
 import { ArrowUpRight, MapPin, Phone } from 'lucide-react';
+import type { AppPage } from './Navbar';
 
 interface FooterProps {
   onOpenModal: () => void;
+  onNavigate?: (page: AppPage, targetHash?: string) => void;
 }
 
-const QUICK_LINKS = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Case Study', href: '#services' },
-  { label: 'Blogs', href: '#clients' },
-];
-
 const FOOTER_SERVICES = [
-  { label: 'UI/UX Design', href: '#services' },
-  { label: 'Logo & Branding', href: '#services' },
-  { label: 'No-Code Dev', href: '#services' },
-  { label: 'SaaS Design', href: '#services' },
+  { label: 'Full-Stack Development', href: '#services' },
+  { label: 'Enterprise AI & LLM Systems', href: '#services' },
+  { label: 'Dark Luxury UI/UX', href: '#services' },
+  { label: 'Motion & 3D WebGL', href: '#services' },
 ];
 
 const SOCIAL_LINKS = [
@@ -59,7 +54,15 @@ const SOCIAL_LINKS = [
   },
 ];
 
-export function Footer({ onOpenModal }: FooterProps) {
+const CURRENT_YEAR = new Date().getFullYear();
+
+export function Footer({ onOpenModal, onNavigate }: FooterProps) {
+  const handleNav = (page: AppPage, hash?: string) => {
+    if (onNavigate) {
+      onNavigate(page, hash);
+    }
+  };
+
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-[#08040f] pt-24 pb-8">
       {/* Background ambient glow */}
@@ -80,14 +83,23 @@ export function Footer({ onOpenModal }: FooterProps) {
             </a>
           </div>
 
-          <button
-            type="button"
-            onClick={onOpenModal}
-            className="group inline-flex cursor-pointer items-center gap-3 self-start rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#0a0612] shadow-[0_0_32px_rgba(168,85,247,0.35)] transition-all duration-300 hover:bg-violet-100 hover:shadow-[0_0_45px_rgba(168,85,247,0.6)] lg:self-auto"
-          >
-            <span>Book a 15-min call</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </button>
+          <div className="flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={onOpenModal}
+              className="group inline-flex cursor-pointer items-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-[#0a0612] shadow-[0_0_32px_rgba(168,85,247,0.35)] transition-all duration-300 hover:bg-violet-100 hover:shadow-[0_0_45px_rgba(168,85,247,0.6)]"
+            >
+              <span>Book a 15-min call</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleNav('contact')}
+              className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-4 text-sm font-semibold text-white transition-all hover:border-violet-300 hover:bg-white/10"
+            >
+              <span>Contact Page</span>
+            </button>
+          </div>
         </div>
 
         {/* Main Footer Columns */}
@@ -95,7 +107,7 @@ export function Footer({ onOpenModal }: FooterProps) {
           {/* Column 1: Brand Description */}
           <div className="lg:col-span-4">
             <div className="font-display text-2xl font-bold tracking-tight text-white">
-              visualjoy
+              CODEXX <span className="text-violet-300">PLUS</span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-gray-400">
               We explore every idea with curiosity and care, crafting purposeful
@@ -121,36 +133,72 @@ export function Footer({ onOpenModal }: FooterProps) {
           {/* Column 2: Quick Links */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">
-              Quick Links
+              Navigation
             </h3>
             <ul className="mt-5 space-y-3.5">
-              {QUICK_LINKS.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-violet-300"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => handleNav('home', '#home')}
+                  className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-violet-300"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => handleNav('about')}
+                  className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-violet-300"
+                >
+                  About Studio
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => handleNav('home', '#services')}
+                  className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-violet-300"
+                >
+                  Services
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => handleNav('home', '#clients')}
+                  className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-violet-300"
+                >
+                  Testimonials
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => handleNav('contact')}
+                  className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-violet-300"
+                >
+                  Contact Us
+                </button>
+              </li>
             </ul>
           </div>
 
           {/* Column 3: Services */}
           <div className="lg:col-span-2">
             <h3 className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">
-              Services
+              Disciplines
             </h3>
             <ul className="mt-5 space-y-3.5">
               {FOOTER_SERVICES.map((item) => (
                 <li key={item.label}>
-                  <a
-                    href={item.href}
-                    className="text-sm text-gray-300 transition-colors hover:text-violet-300"
+                  <button
+                    type="button"
+                    onClick={() => handleNav('home', '#services')}
+                    className="cursor-pointer text-left text-sm text-gray-300 transition-colors hover:text-violet-300"
                   >
                     {item.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -159,41 +207,41 @@ export function Footer({ onOpenModal }: FooterProps) {
           {/* Column 4: Contact Details */}
           <div className="lg:col-span-4">
             <h3 className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase">
-              Contact
+              Global Hubs
             </h3>
             <div className="mt-5 space-y-4 text-sm text-gray-300">
               <div className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" />
                 <div className="space-y-1">
                   <a
-                    href="tel:+8801712345678"
+                    href="tel:+15558392041"
                     className="block transition-colors hover:text-white"
                   >
-                    +880 1712-345678
+                    +1 (555) 839-2041 (Americas)
                   </a>
                   <a
-                    href="tel:+8801819876543"
+                    href="tel:+41442114890"
                     className="block transition-colors hover:text-white"
                   >
-                    +880 1819-876543
+                    +41 44 211 4890 (Europe Core)
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-violet-400" />
-                <div className="space-y-2.5 text-gray-400">
+                <div className="space-y-2 text-gray-400">
                   <p>
                     <span className="font-medium text-gray-200">
-                      Banani Studio:
+                      San Francisco:
                     </span>{' '}
-                    House 42, Road 11, Block F, Banani, Dhaka 1213
+                    500 Howard St, Financial District, CA
                   </p>
                   <p>
                     <span className="font-medium text-gray-200">
-                      Gulshan Hub:
+                      Zurich Hub:
                     </span>{' '}
-                    Level 8, Concord Tower, Gulshan 2, Dhaka 1212
+                    Bahnhofstrasse 45, Tech Core, Switzerland
                   </p>
                 </div>
               </div>
@@ -203,7 +251,7 @@ export function Footer({ onOpenModal }: FooterProps) {
 
         {/* Bottom Copyright & Policies */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-gray-400 sm:flex-row">
-          <p>All rights reserved©visualjoy</p>
+          <p>All rights reserved &copy; {CURRENT_YEAR} CODEXX PLUS.</p>
           <div className="flex items-center gap-6">
             <a
               href="#payment-policy"
@@ -241,4 +289,3 @@ export function Footer({ onOpenModal }: FooterProps) {
     </footer>
   );
 }
-

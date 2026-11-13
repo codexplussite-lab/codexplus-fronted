@@ -44,7 +44,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'Development',
     tag: 'Full-Stack & AI',
     description:
-      'We offer a curated selection of tour packages and bespoke engineering architectures—combining scalable cloud systems, intelligent automation, and lightning-fast web platforms.',
+      'Bespoke engineering architectures combining high-throughput cloud infrastructure, proprietary autonomous agent pipelines, and lightning-fast web applications.',
     isLarge: true,
   },
   {
@@ -52,14 +52,14 @@ export const SERVICES: ServiceItem[] = [
     title: 'Graphics Design',
     tag: 'Visual Identity',
     description:
-      'We offer a curated selection of tour packages in visual storytelling, high-craft brand systems, and luxury editorial assets built for recognition.',
+      'Cinematic visual storytelling, authoritative brand guidelines, and dark-luxury design tokens engineered for global enterprise prestige.',
   },
   {
     id: 'video-editing',
     title: 'Video Editing',
     tag: 'Motion & Post',
     description:
-      'We offer a curated selection of tour packages covering cinematic post-production, 3D motion graphics, and high-converting brand reels.',
+      'World-class post-production, interactive 3D WebGL motion graphics, and high-impact product keynote films crafted for conversion.',
     featured: true,
   },
   {
@@ -67,14 +67,14 @@ export const SERVICES: ServiceItem[] = [
     title: 'Social Media Marketing',
     tag: 'Growth Engine',
     description:
-      'We offer a curated selection of tour packages tailored for audience expansion, campaign orchestration, and measurable community engagement.',
+      'Omnichannel narrative orchestration, strategic executive positioning, and data-backed distribution driving measurable qualified pipeline.',
   },
   {
     id: 'seo-geo',
     title: 'SEO / GEO',
     tag: 'Search & AI Discovery',
     description:
-      'We offer a curated selection of tour packages designed to capture traditional search rankings and generative AI engine visibility worldwide.',
+      'Next-generation search authority optimized for both traditional algorithmic rankings and generative AI engine discovery worldwide.',
   },
 ];
 
